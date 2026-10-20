@@ -1,6 +1,4 @@
 
-import java.util.Scanner;
-
 /*Step 2
 Create a Java application named rental-car-calculator that estimates the cost
 of reserving a rental car. Prompt the user for the following information:
@@ -19,6 +17,7 @@ Step 4
 2. Send your repository URL to your Instructor
 */
 
+import java.util.Locale;
 import java.util.Scanner;
 
 public class Main {
@@ -41,18 +40,42 @@ public class Main {
         rentalDays = sc.nextInt();
 
         System.out.print("Would you like an electronic toll tag for $3.95/day? (yes/no) ");
-        if (sc.next().equalsIgnoreCase("yes")) {
-            electronicToll = 3.95 * rentalDays;
+        switch (sc.next().toLowerCase(Locale.ROOT)) {
+            case "yes":
+                electronicToll = 3.95 * rentalDays;
+                break;
+            case "no":
+                break;
+            default:
+                System.out.println("Invalid toll tag option. Please enter yes or no.");
+                sc.close();
+                return;
         }
 
         System.out.print("Would you like a GPS for $2.95/day? (yes/no) ");
-        if (sc.next().equalsIgnoreCase("yes")) {
-            GPS = 2.95 * rentalDays;
+        switch (sc.next().toLowerCase(Locale.ROOT)) {
+            case "yes":
+                GPS = 2.95 * rentalDays;
+                break;
+            case "no":
+                break;
+            default:
+                System.out.println("Invalid GPS option. Please enter yes or no.");
+                sc.close();
+                return;
         }
 
         System.out.print("Would you like roadside assistance for $3.95/day? (yes/no) ");
-        if (sc.next().equalsIgnoreCase("yes")) {
-            roadsideAssistance = 3.95 * rentalDays;
+        switch (sc.next().toLowerCase(Locale.ROOT)) {
+            case "yes":
+                roadsideAssistance = 3.95 * rentalDays;
+                break;
+            case "no":
+                break;
+            default:
+                System.out.println("Invalid roadside assistance option. Please enter yes or no.");
+                sc.close();
+                return;
         }
 
         System.out.print("Enter your age: ");
