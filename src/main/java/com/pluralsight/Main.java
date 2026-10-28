@@ -1,3 +1,5 @@
+package com.pluralsight;
+
 
 /*Step 2
 Create a Java application named rental-car-calculator that estimates the cost
